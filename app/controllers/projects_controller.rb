@@ -9,7 +9,7 @@ class ProjectsController < ApplicationController
     @projects = Project.all
     @projects.each do |project|
       worked_hours = 0
-      @time_entries = TimeEntry.where(id: project.id)
+      @time_entries = TimeEntry.where(Project_id: project.id)
       @time_entries.each do |entry|
         worked_hours += entry.number_of_hours
       end
@@ -75,7 +75,7 @@ class ProjectsController < ApplicationController
 
     def set_time_entries
       if @project
-        @time_entries = TimeEntry.where(id: @project.id)
+        @time_entries = TimeEntry.where(Project_id: @project.id)
         hours_worked = 0
         @time_entries.each do |entry|
             hours_worked += entry.number_of_hours
