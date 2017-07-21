@@ -75,15 +75,14 @@ class ProjectsController < ApplicationController
 
     def set_time_entries
       if @project
-        @time_entries = TimeEntry.where(id: @project.id)
+        @time_entries  = TimeEntry.where(Project_id: @project.id)
         hours_worked = 0
         @time_entries.each do |entry|
-            hours_worked += entry.number_of_hours
-        end
-        @project.update_attribute(:worked_hours, hours_worked)
+          hours_worked += entry.number_of_hours
       end
-
+      @project.update_attribute(:worked_hours, hours_worked)
     end
+
     # Use callbacks to share common setup or constraints between actions.
     def set_project
       @project = Project.find(params[:id])
