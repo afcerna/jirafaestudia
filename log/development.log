@@ -2358,3 +2358,450 @@ Processing by TimeEntriesController#index as HTML
 Completed 200 OK in 103ms (Views: 97.1ms | ActiveRecord: 0.4ms)
 
 
+Started GET "/" for 127.0.0.1 at 2017-07-21 16:15:34 -0400
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by WelcomeController#index as HTML
+  Rendering welcome/index.html.erb within layouts/application
+  Rendered welcome/index.html.erb within layouts/application (15.5ms)
+Completed 200 OK in 1978ms (Views: 1883.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/projects" for 127.0.0.1 at 2017-07-21 16:15:42 -0400
+Processing by ProjectsController#index as HTML
+  Rendering projects/index.html.erb within layouts/application
+  [1m[36mProject Load (0.5ms)[0m  [1m[34mSELECT "projects".* FROM "projects"[0m
+  Rendered projects/index.html.erb within layouts/application (3.9ms)
+Completed 200 OK in 186ms (Views: 35.2ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/projects" for 127.0.0.1 at 2017-07-21 16:16:55 -0400
+Processing by ProjectsController#index as HTML
+Completed 500 Internal Server Error in 23ms (ActiveRecord: 0.0ms)
+
+
+  
+NoMethodError (undefined method `id' for nil:NilClass):
+  
+app/controllers/projects_controller.rb:69:in `set_time_entries'
+  Rendering /home/alex/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.4/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /home/alex/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.4/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /home/alex/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.4/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (4.5ms)
+  Rendering /home/alex/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.4/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /home/alex/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.4/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.1ms)
+  Rendering /home/alex/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /home/alex/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.1ms)
+  Rendered /home/alex/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.4/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (134.6ms)
+Started GET "/projects" for 127.0.0.1 at 2017-07-21 16:17:34 -0400
+Processing by ProjectsController#index as HTML
+  Rendering projects/index.html.erb within layouts/application
+  [1m[36mProject Load (0.5ms)[0m  [1m[34mSELECT "projects".* FROM "projects"[0m
+  Rendered projects/index.html.erb within layouts/application (3.5ms)
+Completed 200 OK in 44ms (Views: 33.0ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/projects" for 127.0.0.1 at 2017-07-21 16:17:41 -0400
+Processing by ProjectsController#index as HTML
+  Rendering projects/index.html.erb within layouts/application
+  [1m[36mProject Load (0.4ms)[0m  [1m[34mSELECT "projects".* FROM "projects"[0m
+  Rendered projects/index.html.erb within layouts/application (3.8ms)
+Completed 200 OK in 40ms (Views: 30.3ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/projects/new" for 127.0.0.1 at 2017-07-21 16:17:44 -0400
+Processing by ProjectsController#new as HTML
+  Rendering projects/new.html.erb within layouts/application
+  Rendered projects/_form.html.erb (460.2ms)
+  Rendered projects/new.html.erb within layouts/application (498.3ms)
+Completed 200 OK in 572ms (Views: 535.8ms | ActiveRecord: 1.1ms)
+
+
+Started POST "/projects" for 127.0.0.1 at 2017-07-21 16:18:01 -0400
+Processing by ProjectsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"HVNDq7Qov5714kpIkQJOumjvZZhGAj9b1ZrydP4A92UTGJq78u2dvCtMuMzdddxXTV6pk7LMixy95LsymqEGOA==", "project"=>{"name"=>"test1", "description"=>"test", "total_hours_to_finish"=>"100", "worked_hours"=>"0", "User_id"=>"qwerty"}, "commit"=>"Create Project"}
+  [1m[35m (0.5ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 0], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  Rendering projects/new.html.erb within layouts/application
+  Rendered projects/_form.html.erb (3.9ms)
+  Rendered projects/new.html.erb within layouts/application (5.2ms)
+Completed 200 OK in 506ms (Views: 35.7ms | ActiveRecord: 1.6ms)
+
+
+Started POST "/projects" for 127.0.0.1 at 2017-07-21 16:18:05 -0400
+Processing by ProjectsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"GLk3/4N5l6MTLu6oLuXp0v64amA0XcyOKdUZykqiAVDWU+7e1uZIyYIOAMJJ5hzfNVuES3Ab5vOeq7fqLawLLA==", "project"=>{"name"=>"test1", "description"=>"test", "total_hours_to_finish"=>"100", "worked_hours"=>"0", "User_id"=>"1"}, "commit"=>"Create Project"}
+  [1m[35m (0.3ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  Rendering projects/new.html.erb within layouts/application
+  Rendered projects/_form.html.erb (4.1ms)
+  Rendered projects/new.html.erb within layouts/application (9.1ms)
+Completed 200 OK in 34ms (Views: 29.7ms | ActiveRecord: 0.6ms)
+
+
+Started POST "/projects" for 127.0.0.1 at 2017-07-21 16:18:11 -0400
+Processing by ProjectsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"TNnSSTnSstqJj9nHbrkPkHihvYk+pHqGkftA8Sxa5ZuCMwtobE1tsBivN60Juvqds0JTonriUPsmhe7RS1Tv5w==", "project"=>{"name"=>"test1", "description"=>"test", "total_hours_to_finish"=>"100", "worked_hours"=>"0", "User_id"=>"1"}, "commit"=>"Create Project"}
+  [1m[35m (0.5ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  Rendering projects/new.html.erb within layouts/application
+  Rendered projects/_form.html.erb (5.1ms)
+  Rendered projects/new.html.erb within layouts/application (6.7ms)
+Completed 200 OK in 48ms (Views: 41.9ms | ActiveRecord: 0.8ms)
+
+
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_projects_on_User_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_projects_on_User_id' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_time_entries_on_Project_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_time_entries_on_Project_id' AND type='index'
+[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (1.1ms)[0m  [1m[32mINSERT INTO "users" ("username", "email", "password", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["username", "Madmin"], ["email", "ad@a.a"], ["password", "admin"], ["created_at", "2017-07-21 20:18:33.014418"], ["updated_at", "2017-07-21 20:18:33.014418"]]
+  [1m[35m (65.1ms)[0m  [1m[36mcommit transaction[0m
+Started GET "/projects" for 127.0.0.1 at 2017-07-21 16:18:35 -0400
+Processing by ProjectsController#index as HTML
+  Rendering projects/index.html.erb within layouts/application
+  [1m[36mProject Load (0.3ms)[0m  [1m[34mSELECT "projects".* FROM "projects"[0m
+  Rendered projects/index.html.erb within layouts/application (2.4ms)
+Completed 200 OK in 33ms (Views: 23.1ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/projects/new" for 127.0.0.1 at 2017-07-21 16:18:37 -0400
+Processing by ProjectsController#new as HTML
+  Rendering projects/new.html.erb within layouts/application
+  Rendered projects/_form.html.erb (6.8ms)
+  Rendered projects/new.html.erb within layouts/application (8.6ms)
+Completed 200 OK in 65ms (Views: 50.8ms | ActiveRecord: 0.9ms)
+
+
+Started POST "/projects" for 127.0.0.1 at 2017-07-21 16:18:58 -0400
+Processing by ProjectsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"D8K35HQPv81e61+LhQ+P++XYSLerJC53wlsgIEexq10BiW70Msqd74BFrQ/JeB0WwGmEvF/qmjCqJWlmIxBaAA==", "project"=>{"name"=>"acaca", "description"=>"acac", "total_hours_to_finish"=>"1123", "worked_hours"=>"123123", "User_id"=>"1"}, "commit"=>"Create Project"}
+  [1m[35m (0.7ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "projects" ("name", "description", "total_hours_to_finish", "worked_hours", "User_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["name", "acaca"], ["description", "acac"], ["total_hours_to_finish", 1123], ["worked_hours", 123123], ["User_id", 1], ["created_at", "2017-07-21 20:18:58.932343"], ["updated_at", "2017-07-21 20:18:58.932343"]]
+  [1m[35m (184.0ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/projects/1
+Completed 302 Found in 222ms (ActiveRecord: 186.7ms)
+
+
+Started GET "/projects/1" for 127.0.0.1 at 2017-07-21 16:18:59 -0400
+Processing by ProjectsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mProject Load (0.6ms)[0m  [1m[34mSELECT  "projects".* FROM "projects" WHERE "projects"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mTimeEntry Load (0.2ms)[0m  [1m[34mSELECT "time_entries".* FROM "time_entries" WHERE "time_entries"."id" = ?[0m  [["id", 1]]
+  Rendering projects/show.html.erb within layouts/application
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered projects/show.html.erb within layouts/application (3.2ms)
+Completed 200 OK in 63ms (Views: 34.9ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/projects" for 127.0.0.1 at 2017-07-21 16:19:01 -0400
+Processing by ProjectsController#index as HTML
+  Rendering projects/index.html.erb within layouts/application
+  [1m[36mProject Load (0.2ms)[0m  [1m[34mSELECT "projects".* FROM "projects"[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered projects/index.html.erb within layouts/application (4.3ms)
+Completed 200 OK in 42ms (Views: 39.8ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/projects/1" for 127.0.0.1 at 2017-07-21 16:19:57 -0400
+Processing by ProjectsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mProject Load (0.2ms)[0m  [1m[34mSELECT  "projects".* FROM "projects" WHERE "projects"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mTimeEntry Load (0.2ms)[0m  [1m[34mSELECT "time_entries".* FROM "time_entries" WHERE "time_entries"."id" = ?[0m  [["id", 1]]
+  Rendering projects/show.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered projects/show.html.erb within layouts/application (13.1ms)
+Completed 200 OK in 61ms (Views: 34.1ms | ActiveRecord: 2.6ms)
+
+
+Started GET "/projects/1" for 127.0.0.1 at 2017-07-21 16:20:14 -0400
+Processing by ProjectsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mProject Load (0.1ms)[0m  [1m[34mSELECT  "projects".* FROM "projects" WHERE "projects"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mTimeEntry Load (0.2ms)[0m  [1m[34mSELECT "time_entries".* FROM "time_entries" WHERE "time_entries"."id" = ?[0m  [["id", 1]]
+  Rendering projects/show.html.erb within layouts/application
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered projects/show.html.erb within layouts/application (2.7ms)
+Completed 200 OK in 33ms (Views: 29.4ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/projects/1" for 127.0.0.1 at 2017-07-21 16:20:15 -0400
+Processing by ProjectsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mProject Load (0.2ms)[0m  [1m[34mSELECT  "projects".* FROM "projects" WHERE "projects"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mTimeEntry Load (0.2ms)[0m  [1m[34mSELECT "time_entries".* FROM "time_entries" WHERE "time_entries"."id" = ?[0m  [["id", 1]]
+  Rendering projects/show.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered projects/show.html.erb within layouts/application (5.0ms)
+Completed 200 OK in 67ms (Views: 63.2ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/projects/1" for 127.0.0.1 at 2017-07-21 16:20:16 -0400
+Processing by ProjectsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mProject Load (0.4ms)[0m  [1m[34mSELECT  "projects".* FROM "projects" WHERE "projects"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mTimeEntry Load (0.1ms)[0m  [1m[34mSELECT "time_entries".* FROM "time_entries" WHERE "time_entries"."id" = ?[0m  [["id", 1]]
+  Rendering projects/show.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered projects/show.html.erb within layouts/application (1.9ms)
+Completed 200 OK in 23ms (Views: 20.5ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/projects/1" for 127.0.0.1 at 2017-07-21 16:20:17 -0400
+Processing by ProjectsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mProject Load (0.2ms)[0m  [1m[34mSELECT  "projects".* FROM "projects" WHERE "projects"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mTimeEntry Load (0.3ms)[0m  [1m[34mSELECT "time_entries".* FROM "time_entries" WHERE "time_entries"."id" = ?[0m  [["id", 1]]
+  Rendering projects/show.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered projects/show.html.erb within layouts/application (3.6ms)
+Completed 200 OK in 36ms (Views: 31.7ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/projects/1" for 127.0.0.1 at 2017-07-21 16:20:18 -0400
+Processing by ProjectsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mProject Load (0.7ms)[0m  [1m[34mSELECT  "projects".* FROM "projects" WHERE "projects"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mTimeEntry Load (0.2ms)[0m  [1m[34mSELECT "time_entries".* FROM "time_entries" WHERE "time_entries"."id" = ?[0m  [["id", 1]]
+  Rendering projects/show.html.erb within layouts/application
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered projects/show.html.erb within layouts/application (3.7ms)
+Completed 200 OK in 48ms (Views: 42.9ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/projects/1" for 127.0.0.1 at 2017-07-21 16:22:41 -0400
+Processing by ProjectsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mProject Load (0.3ms)[0m  [1m[34mSELECT  "projects".* FROM "projects" WHERE "projects"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mTimeEntry Load (0.2ms)[0m  [1m[34mSELECT "time_entries".* FROM "time_entries" WHERE "time_entries"."id" = ?[0m  [["id", 1]]
+  Rendering projects/show.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered projects/show.html.erb within layouts/application (15.8ms)
+Completed 200 OK in 72ms (Views: 41.3ms | ActiveRecord: 2.8ms)
+
+
+Started GET "/projects/1" for 127.0.0.1 at 2017-07-21 16:22:42 -0400
+Processing by ProjectsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mProject Load (0.1ms)[0m  [1m[34mSELECT  "projects".* FROM "projects" WHERE "projects"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mTimeEntry Load (0.1ms)[0m  [1m[34mSELECT "time_entries".* FROM "time_entries" WHERE "time_entries"."id" = ?[0m  [["id", 1]]
+  Rendering projects/show.html.erb within layouts/application
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered projects/show.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 25ms (Views: 23.0ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/projects" for 127.0.0.1 at 2017-07-21 16:22:44 -0400
+Processing by ProjectsController#index as HTML
+  [1m[36mProject Load (0.2ms)[0m  [1m[34mSELECT "projects".* FROM "projects"[0m
+  [1m[36mTimeEntry Load (0.2ms)[0m  [1m[34mSELECT "time_entries".* FROM "time_entries" WHERE "time_entries"."id" = ?[0m  [["id", 1]]
+  Rendering projects/index.html.erb within layouts/application
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered projects/index.html.erb within layouts/application (3.7ms)
+Completed 200 OK in 42ms (Views: 39.2ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/projects" for 127.0.0.1 at 2017-07-21 16:22:44 -0400
+Processing by ProjectsController#index as HTML
+  [1m[36mProject Load (0.5ms)[0m  [1m[34mSELECT "projects".* FROM "projects"[0m
+  [1m[36mTimeEntry Load (0.1ms)[0m  [1m[34mSELECT "time_entries".* FROM "time_entries" WHERE "time_entries"."id" = ?[0m  [["id", 1]]
+  Rendering projects/index.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered projects/index.html.erb within layouts/application (2.7ms)
+Completed 200 OK in 28ms (Views: 24.8ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/projects" for 127.0.0.1 at 2017-07-21 16:22:45 -0400
+Processing by ProjectsController#index as HTML
+  [1m[36mProject Load (0.6ms)[0m  [1m[34mSELECT "projects".* FROM "projects"[0m
+  [1m[36mTimeEntry Load (0.3ms)[0m  [1m[34mSELECT "time_entries".* FROM "time_entries" WHERE "time_entries"."id" = ?[0m  [["id", 1]]
+  Rendering projects/index.html.erb within layouts/application
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered projects/index.html.erb within layouts/application (4.6ms)
+Completed 200 OK in 40ms (Views: 35.8ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/projects" for 127.0.0.1 at 2017-07-21 16:22:46 -0400
+Processing by ProjectsController#index as HTML
+  [1m[36mProject Load (0.3ms)[0m  [1m[34mSELECT "projects".* FROM "projects"[0m
+  [1m[36mTimeEntry Load (0.2ms)[0m  [1m[34mSELECT "time_entries".* FROM "time_entries" WHERE "time_entries"."id" = ?[0m  [["id", 1]]
+  Rendering projects/index.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered projects/index.html.erb within layouts/application (4.3ms)
+Completed 200 OK in 34ms (Views: 29.5ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/projects" for 127.0.0.1 at 2017-07-21 16:22:47 -0400
+Processing by ProjectsController#index as HTML
+  [1m[36mProject Load (0.8ms)[0m  [1m[34mSELECT "projects".* FROM "projects"[0m
+  [1m[36mTimeEntry Load (0.3ms)[0m  [1m[34mSELECT "time_entries".* FROM "time_entries" WHERE "time_entries"."id" = ?[0m  [["id", 1]]
+  Rendering projects/index.html.erb within layouts/application
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered projects/index.html.erb within layouts/application (4.4ms)
+Completed 200 OK in 48ms (Views: 41.1ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/projects" for 127.0.0.1 at 2017-07-21 16:22:48 -0400
+Processing by ProjectsController#index as HTML
+  [1m[36mProject Load (0.3ms)[0m  [1m[34mSELECT "projects".* FROM "projects"[0m
+  [1m[36mTimeEntry Load (0.2ms)[0m  [1m[34mSELECT "time_entries".* FROM "time_entries" WHERE "time_entries"."id" = ?[0m  [["id", 1]]
+  Rendering projects/index.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered projects/index.html.erb within layouts/application (4.2ms)
+Completed 200 OK in 53ms (Views: 49.1ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/projects" for 127.0.0.1 at 2017-07-21 16:22:56 -0400
+Processing by ProjectsController#index as HTML
+  [1m[36mProject Load (0.5ms)[0m  [1m[34mSELECT "projects".* FROM "projects"[0m
+  [1m[36mTimeEntry Load (0.1ms)[0m  [1m[34mSELECT "time_entries".* FROM "time_entries" WHERE "time_entries"."id" = ?[0m  [["id", 1]]
+  Rendering projects/index.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered projects/index.html.erb within layouts/application (19.3ms)
+Completed 200 OK in 71ms (Views: 43.5ms | ActiveRecord: 3.0ms)
+
+
+Started GET "/projects" for 127.0.0.1 at 2017-07-21 16:22:57 -0400
+Processing by ProjectsController#index as HTML
+  [1m[36mProject Load (0.8ms)[0m  [1m[34mSELECT "projects".* FROM "projects"[0m
+  [1m[36mTimeEntry Load (0.3ms)[0m  [1m[34mSELECT "time_entries".* FROM "time_entries" WHERE "time_entries"."id" = ?[0m  [["id", 1]]
+  Rendering projects/index.html.erb within layouts/application
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered projects/index.html.erb within layouts/application (4.8ms)
+Completed 200 OK in 41ms (Views: 34.5ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/projects" for 127.0.0.1 at 2017-07-21 16:24:48 -0400
+Processing by ProjectsController#index as HTML
+  [1m[36mProject Load (0.3ms)[0m  [1m[34mSELECT "projects".* FROM "projects"[0m
+  [1m[36mTimeEntry Load (0.2ms)[0m  [1m[34mSELECT "time_entries".* FROM "time_entries" WHERE "time_entries"."id" = ?[0m  [["id", 1]]
+Completed 500 Internal Server Error in 40ms (ActiveRecord: 1.4ms)
+
+
+  
+NoMethodError (undefined method `update_attribute' for #<Class:0x007fac49cca4a0>
+Did you mean?  _default_attributes):
+  
+app/controllers/projects_controller.rb:16:in `block in index'
+app/controllers/projects_controller.rb:10:in `index'
+  Rendering /home/alex/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.4/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /home/alex/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.4/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /home/alex/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.4/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (3.6ms)
+  Rendering /home/alex/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.4/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /home/alex/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.4/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.8ms)
+  Rendering /home/alex/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /home/alex/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.8ms)
+  Rendered /home/alex/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.4/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (20.1ms)
+Started GET "/projects" for 127.0.0.1 at 2017-07-21 16:26:41 -0400
+Processing by ProjectsController#index as HTML
+  [1m[36mProject Load (0.3ms)[0m  [1m[34mSELECT "projects".* FROM "projects"[0m
+  [1m[36mTimeEntry Load (0.1ms)[0m  [1m[34mSELECT "time_entries".* FROM "time_entries" WHERE "time_entries"."id" = ?[0m  [["id", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[33mUPDATE "projects" SET "worked_hours" = ?, "updated_at" = ? WHERE "projects"."id" = ?[0m  [["worked_hours", 0], ["updated_at", "2017-07-21 20:26:41.627667"], ["id", 1]]
+  [1m[35m (88.0ms)[0m  [1m[36mcommit transaction[0m
+  Rendering projects/index.html.erb within layouts/application
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered projects/index.html.erb within layouts/application (11.1ms)
+Completed 200 OK in 141ms (Views: 32.8ms | ActiveRecord: 90.0ms)
+
+
+Started GET "/projects" for 127.0.0.1 at 2017-07-21 16:27:23 -0400
+Processing by ProjectsController#index as HTML
+  [1m[36mProject Load (0.6ms)[0m  [1m[34mSELECT "projects".* FROM "projects"[0m
+  [1m[36mTimeEntry Load (0.2ms)[0m  [1m[34mSELECT "time_entries".* FROM "time_entries" WHERE "time_entries"."id" = ?[0m  [["id", 1]]
+  Rendering projects/index.html.erb within layouts/application
+  Rendered projects/index.html.erb within layouts/application (4.8ms)
+Completed 500 Internal Server Error in 11ms (ActiveRecord: 0.8ms)
+
+
+  
+ActionView::Template::Error (undefined method `worked_hours' for nil:NilClass):
+    20:         <td><%= project.name %></td>
+    21:         <td><%= project.description %></td>
+    22:         <td><%= project.total_hours_to_finish %></td>
+    23:         <td><%= @project.worked_hours %></td>
+    24:         <td><%= project.User %></td>
+    25:         <td><%= link_to 'Show', project %></td>
+    26:         <td><%= link_to 'Edit', edit_project_path(project) %></td>
+  
+app/views/projects/index.html.erb:23:in `block in _app_views_projects_index_html_erb___840426498511092857_70188979582120'
+app/views/projects/index.html.erb:18:in `_app_views_projects_index_html_erb___840426498511092857_70188979582120'
+  Rendering /home/alex/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.4/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout
+  Rendering /home/alex/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.4/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /home/alex/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.4/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (5.2ms)
+  Rendering /home/alex/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.4/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /home/alex/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.4/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.1ms)
+  Rendering /home/alex/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /home/alex/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.7ms)
+  Rendered /home/alex/.rvm/gems/ruby-2.4.0/gems/actionpack-5.0.4/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (22.5ms)
+Started GET "/projects" for 127.0.0.1 at 2017-07-21 16:27:30 -0400
+Processing by ProjectsController#index as HTML
+  [1m[36mProject Load (0.2ms)[0m  [1m[34mSELECT "projects".* FROM "projects"[0m
+  [1m[36mTimeEntry Load (0.2ms)[0m  [1m[34mSELECT "time_entries".* FROM "time_entries" WHERE "time_entries"."id" = ?[0m  [["id", 1]]
+  Rendering projects/index.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered projects/index.html.erb within layouts/application (2.6ms)
+Completed 200 OK in 33ms (Views: 30.0ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/projects" for 127.0.0.1 at 2017-07-21 16:27:37 -0400
+Processing by ProjectsController#index as HTML
+  [1m[36mProject Load (0.6ms)[0m  [1m[34mSELECT "projects".* FROM "projects"[0m
+  [1m[36mTimeEntry Load (0.1ms)[0m  [1m[34mSELECT "time_entries".* FROM "time_entries" WHERE "time_entries"."id" = ?[0m  [["id", 1]]
+  Rendering projects/index.html.erb within layouts/application
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered projects/index.html.erb within layouts/application (3.0ms)
+Completed 200 OK in 37ms (Views: 33.6ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/projects" for 127.0.0.1 at 2017-07-21 16:27:39 -0400
+Processing by ProjectsController#index as HTML
+  [1m[36mProject Load (0.2ms)[0m  [1m[34mSELECT "projects".* FROM "projects"[0m
+  [1m[36mTimeEntry Load (0.2ms)[0m  [1m[34mSELECT "time_entries".* FROM "time_entries" WHERE "time_entries"."id" = ?[0m  [["id", 1]]
+  Rendering projects/index.html.erb within layouts/application
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered projects/index.html.erb within layouts/application (4.3ms)
+Completed 200 OK in 44ms (Views: 39.5ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/projects" for 127.0.0.1 at 2017-07-21 16:28:41 -0400
+Processing by ProjectsController#index as HTML
+  [1m[36mProject Load (0.4ms)[0m  [1m[34mSELECT "projects".* FROM "projects"[0m
+  [1m[36mTimeEntry Load (0.2ms)[0m  [1m[34mSELECT "time_entries".* FROM "time_entries" WHERE "time_entries"."id" = ?[0m  [["id", 1]]
+  Rendering projects/index.html.erb within layouts/application
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered projects/index.html.erb within layouts/application (14.3ms)
+Completed 200 OK in 63ms (Views: 38.2ms | ActiveRecord: 2.2ms)
+
+
+Started GET "/projects/1" for 127.0.0.1 at 2017-07-21 16:28:42 -0400
+Processing by ProjectsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mProject Load (0.5ms)[0m  [1m[34mSELECT  "projects".* FROM "projects" WHERE "projects"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mTimeEntry Load (0.2ms)[0m  [1m[34mSELECT "time_entries".* FROM "time_entries" WHERE "time_entries"."id" = ?[0m  [["id", 1]]
+  Rendering projects/show.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered projects/show.html.erb within layouts/application (2.7ms)
+Completed 200 OK in 37ms (Views: 32.9ms | ActiveRecord: 0.9ms)
+
+

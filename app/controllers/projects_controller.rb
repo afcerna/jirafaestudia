@@ -1,10 +1,20 @@
 class ProjectsController < ApplicationController
   before_action :set_project, only: [:show, :edit, :update, :destroy]
+  before_action :set_time_entries, only: [:show]
+
 
   # GET /projects
   # GET /projects.json
   def index
     @projects = Project.all
+    @projects.each do |project|
+      worked_hours = 0
+      @time_entries = TimeEntry.where(id: project.id)
+      @time_entries.each do |entry|
+        worked_hours += entry.number_of_hours
+      end
+      project.update_attribute(:worked_hours, worked_hours)
+    end
   end
 
   # GET /projects/1
@@ -62,6 +72,18 @@ class ProjectsController < ApplicationController
   end
 
   private
+
+    def set_time_entries
+      if @project
+        @time_entries = TimeEntry.where(id: @project.id)
+        hours_worked = 0
+        @time_entries.each do |entry|
+            hours_worked += entry.number_of_hours
+        end
+        @project.update_attribute(:worked_hours, hours_worked)
+      end
+
+    end
     # Use callbacks to share common setup or constraints between actions.
     def set_project
       @project = Project.find(params[:id])
