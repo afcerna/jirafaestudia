@@ -1,4 +1,9 @@
 Rails.application.routes.draw do
+  resources :time_entries
+  get 'welcome/index'
+
+  root 'welcome#index'
+
   resources :pros
   resources :projects
   resources :users
