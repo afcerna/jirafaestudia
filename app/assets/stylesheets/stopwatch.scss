@@ -1,0 +1,22 @@
+// Place all the styles related to the stopwatch controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+.stopwatch_main {
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+  background-color : #FFD166;
+  width: 300px;
+  height: auto;
+
+}
+.clock {
+  align-items: center;
+  background-color : #FFD166
+}
+.stopwatch {
+  align-items: center;
+  background-color : #DD6E42
+}

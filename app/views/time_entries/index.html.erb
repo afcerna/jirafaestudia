@@ -20,9 +20,9 @@
         <td><%= time_entry.date %></td>
         <td><%= time_entry.description %></td>
         <td><%= time_entry.Project %></td>
-        <td><%= link_to 'Show', time_entry %></td>
-        <td><%= link_to 'Edit', edit_time_entry_path(time_entry) %></td>
-        <td><%= link_to 'Destroy', time_entry, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Show', project_time_entry_path(time_entry.Project.id, time_entry) %></td>
+        <td><%= link_to 'Edit', [:edit, time_entry.Project, time_entry ] %></td>
+        <td><%= link_to 'Destroy', [ time_entry.Project, time_entry ],method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>
@@ -30,4 +30,4 @@
 
 <br>
 
-<%= link_to 'New Time Entry', new_time_entry_path %>
+<%= link_to 'New Time Entry', new_project_time_entry_path %>

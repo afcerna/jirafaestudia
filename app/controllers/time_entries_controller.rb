@@ -56,7 +56,7 @@ class TimeEntriesController < ApplicationController
   def destroy
     @time_entry.destroy
     respond_to do |format|
-      format.html { redirect_to time_entries_url, notice: 'Time entry was successfully destroyed.' }
+      format.html { redirect_to project_time_entries_path, notice: 'Time entry was successfully destroyed.' }
       format.json { head :no_content }
     end
   end
@@ -71,4 +71,5 @@ class TimeEntriesController < ApplicationController
     def time_entry_params
       params.require(:time_entry).permit(:number_of_hours, :date, :description, :Project_id)
     end
+
 end

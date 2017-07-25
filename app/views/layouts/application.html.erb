@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <%= yield :head %>
     <title>Jirafaestudia</title>
     <%= csrf_meta_tags %>
 
@@ -20,7 +21,7 @@
         <class="active"><%= link_to "Home", root_path %>
         <%=link_to "Users", controller:'users' %>
         <%=link_to "Projects", controller:'projects' %>
-        <%=link_to "Time Entries", controller:'time_entries' %>
+        <%=link_to "Stopwatch", data: { turbolinks: 'false' }, controller:'stopwatch' %>
 
       </ul>
 

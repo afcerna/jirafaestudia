@@ -1,8 +1,14 @@
 Rails.application.routes.draw do
-  resources :time_entries
+
   get 'welcome/index'
 
   root 'welcome#index'
+
+  get "stopwatch" =>"stopwatch#index"
+
+  resources :projects do
+  resources :time_entries
+  end
 
   resources :pros
   resources :projects
