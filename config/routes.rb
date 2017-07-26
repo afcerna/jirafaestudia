@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
 
+  devise_for :users
   get 'welcome/index'
 
   root 'welcome#index'
@@ -7,7 +8,7 @@ Rails.application.routes.draw do
   get "stopwatch" =>"stopwatch#index"
 
   resources :projects do
-  resources :time_entries
+    resources :time_entries
   end
 
   resources :pros
