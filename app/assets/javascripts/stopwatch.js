@@ -3,52 +3,98 @@ var clock = $("time")
 var start = $ ('.start')
 var stop = $ (".stop")
 var reset = $ (".reset")
+var setPom = $(".setPom")
 var sec = 0, min = 0, hour = 0, mil = 0, t=0;
-var color = "#F0FFFF";
+var color = "#ffffff";
+var s = 0;
+var currentTimePomodoro = 0;
+var timePomodoro = 5;
+var currentTimeBreak = 0;
+var timeBreak = 3;
+var currentTimeLongBreak = 0;
+var TimeLongBreak = 5;
+var currentPomodoroInCyc = 1;
+var pomodoroPerCyc = 3;
+
+
+
+function setColorBackground (){
+  if (s == 0) {
+    color = "#143109";
+  };
+  if (s == 1) {
+    color = "#009dc4";
+  };
+  if (s == 2) {
+    color = "#9201ba";
+  }
+
+  switchBackground ();
+};
 
 function switchBackground (){
   $('#stopwatch').css("background-color", color);
-}
+};
+
+function add2(){
+  if (s == 0){
+    currentTimePomodoro++;
+  }
+  if (s == 1) {
+    currentTimeBreak++;
+  };
+  if (s == 2) {
+    currentTimeLongBreak++;
+  }
+};
+
 
 function add() {
   mil++;
+
   if (mil >= 100){
-    mil = 0;
+    add2();
+    setColorBackground();
     sec++;
+    mil = 0;
   }
   if(sec >= 60) {
-    sec = 0;
     min++;
+    sec = 0;
   };
 
   if (min >= 60) {
     min = 0;
     hour++;
-    color = "#006600";
-    switchBackground();
-  };
-  if (sec == 25){
-    color = "#4F6D7A";
-    switchBackground();
-  };
-  if (sec == 55){
-    color = "#4F6D7A";
-    switchBackground();
-  };
-  if (sec == 30){
-    color = "#143109";
-    switchBackground();
-  };
-  if (sec == 00){
-    color = "#143109";
-    switchBackground();
   };
 
 
 
+  if (currentTimePomodoro == timePomodoro && currentPomodoroInCyc < pomodoroPerCyc){
+    s = 1;
+    setColorBackground();
+    currentTimePomodoro = 0;
+    currentPomodoroInCyc++;
+  };
 
+  if (currentTimePomodoro == timePomodoro && currentPomodoroInCyc == pomodoroPerCyc){
+    s = 2;
+    setColorBackground();
+    currentTimePomodoro = 0;
+    currentPomodoroInCyc = 1;
+  };
 
+  if (currentTimeBreak == timeBreak) {
+    s = 0;
+    setColorBackground();
+    currentTimeBreak = 0;
+  };
 
+  if (currentTimeLongBreak == TimeLongBreak) {
+    s = 0;
+    setColorBackground();
+    currentTimeLongBreak = 0;
+  }
 
 function makeTimeString() {
   return (hour ? (hour > 9 ? hour : "0" + hour) : "00") + ":" + (min ? (min > 9 ? min : "0" + min) : "00") + ":" + (sec > 9 ? sec : "0" + sec)
@@ -83,19 +129,13 @@ function stopClock () {
   switchBackground();
 };
 
+
 function archive () {
-
-
-  hour
-  min
 
 };
 
 
   reset.click(resetClock);
   stop.click(stopClock);
-  if (t==0){
   start.click(clockStart);
-  };
-  archive.click(archive);
 });
