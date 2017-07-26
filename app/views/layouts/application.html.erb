@@ -9,26 +9,25 @@
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
-  <body>
+  <!-- <body>
     <p class="notice"><%= notice %></p>
-<p class="alert"><%= alert %></p>
+    <p class="alert"><%= alert %></p> -->
 
-<header class="navbar  navbar-inverse">
-  <div class="navbar-class">
-    <div class="container">
-
-      <ul class="nav navbar-nav">
-        <class="active"><%= link_to "Home", root_path %>
-        <%=link_to "Users", controller:'users' %>
-        <%=link_to "Projects", controller:'projects' %>
-        <%=link_to "Stopwatch", data: { turbolinks: 'false' }, controller:'stopwatch' %>
-
-      </ul>
-
-
-    </div>
-  </div>
-</header>
+  <header class="navbar  navbar-inverse">
+      <div class="container" id="navbar">
+        <div class="row">
+          <div id="sidebar" class="col-xs-3">
+            <ul class="nav navbar-nav">
+            <item><%= link_to "Home", root_path %></item>
+            <item><%=link_to "Users", controller:'users' %></item>
+            <item><%=link_to "Projects", controller:'projects' %></item>
+            <item><%=link_to "Stopwatch", data: { turbolinks: 'false' }, controller:'stopwatch' %></item>
+            </ul>
+        </div>
+        <div>
+      </div>
+  </header>
+  <body>
     <%= yield %>
   </body>
 </html>
