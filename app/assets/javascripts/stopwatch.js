@@ -15,6 +15,7 @@ var currentTimeLongBreak = 0;
 var TimeLongBreak = 5;
 var currentPomodoroInCyc = 1;
 var pomodoroPerCyc = 3;
+var clockStatus = 0;
 
 
 
@@ -106,11 +107,15 @@ clock.html(makeTimeString);
 clockStart();
 
 };
+function clockPlay() {
+  if (clockStatus != 1) {
+    clockStatus = 1;
+    clockStart();
+  }
+};
 
 function clockStart() {
-
   t = setTimeout (add, 10);
-
 };
 
 function resetClock() {
@@ -127,6 +132,7 @@ function stopClock () {
   clearTimeout(t);
   color = "#DD6E42";
   switchBackground();
+  clockStatus = 0;
 };
 
 
@@ -137,5 +143,5 @@ function archive () {
 
   reset.click(resetClock);
   stop.click(stopClock);
-  start.click(clockStart);
+  start.click(clockPlay);
 });
