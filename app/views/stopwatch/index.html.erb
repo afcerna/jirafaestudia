@@ -11,10 +11,12 @@ rfails
       <button class = "btn btn-primary reset">Reset</button>
       <button class = "btn btn-primary archive">Archive</button>
       <select class ="s_project">Project
-         <option value="project X">Project X </option>
-         <option value="project Y">Project Y </option>
-         <option value="project Z">Project Z </option>
-         </select>
+         <% if @projects %>
+         <% @projects.each do |project| %>
+         <option value=project.name><%=project.name%></option>
+         <% end %>
+         <% end %>
+      </select>
 
   </div>
   <div class = "clockConfig">

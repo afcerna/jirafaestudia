@@ -4,7 +4,7 @@ class CreateTimeEntries < ActiveRecord::Migration[5.0]
       t.integer :number_of_hours
       t.date :date
       t.string :description
-      t.belongs_to :Project, foreign_key: true
+      t.belongs_to :project, foreign_key: true
 
       t.timestamps
     end

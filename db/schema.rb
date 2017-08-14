@@ -17,20 +17,20 @@ ActiveRecord::Schema.define(version: 20170726163540) do
     t.string   "description"
     t.integer  "total_hours_to_finish"
     t.integer  "worked_hours"
-    t.integer  "User_id"
+    t.integer  "user_id"
     t.datetime "created_at",            null: false
     t.datetime "updated_at",            null: false
-    t.index ["User_id"], name: "index_projects_on_User_id"
+    t.index ["user_id"], name: "index_projects_on_user_id"
   end
 
   create_table "time_entries", force: :cascade do |t|
     t.integer  "number_of_hours"
     t.date     "date"
     t.string   "description"
-    t.integer  "Project_id"
+    t.integer  "project_id"
     t.datetime "created_at",      null: false
     t.datetime "updated_at",      null: false
-    t.index ["Project_id"], name: "index_time_entries_on_Project_id"
+    t.index ["project_id"], name: "index_time_entries_on_project_id"
   end
 
   create_table "users", force: :cascade do |t|

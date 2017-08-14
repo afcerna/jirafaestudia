@@ -1,3 +1,3 @@
 class TimeEntry < ApplicationRecord
-  belongs_to :Project
+  belongs_to :project
 end

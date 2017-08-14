@@ -5,7 +5,7 @@ class CreateProjects < ActiveRecord::Migration[5.0]
       t.string :description
       t.integer :total_hours_to_finish
       t.integer :worked_hours
-      t.belongs_to :User, foreign_key: true
+      t.belongs_to :user, foreign_key: true
 
       t.timestamps
     end

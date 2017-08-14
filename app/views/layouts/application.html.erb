@@ -18,9 +18,9 @@
       <div id="sidebar" class="col-xs-3">
         <ul class="nav navbar-nav">
         <item><%= link_to "Home", root_path %></item>
-        <item><%=link_to "Users", controller:'users' %></item>
-        <item><%=link_to "Projects", controller:'projects' %></item>
-        <item><%=link_to "Stopwatch", data: { turbolinks: 'false' }, controller:'stopwatch' %></item>
+        <item><%=link_to "Users", users_path %></item>
+        <item><%=link_to "Projects", projects_path %></item>
+        <item><%=link_to "Stopwatch", stopwatch_path,  data: { turbolinks: 'false' } %></item>
         </ul>
     </div>
     </div>
