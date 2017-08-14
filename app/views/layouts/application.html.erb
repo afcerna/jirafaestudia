@@ -10,7 +10,6 @@
   </head>
 
   <%= notice %></p>
-<p class="alert"><%= alert %></p>
 
 <header class="navbar  navbar-inverse">
   <div class="container" id="navbar">
@@ -18,8 +17,10 @@
       <div id="sidebar" class="col-xs-3">
         <ul class="nav navbar-nav">
         <item><%= link_to "Home", root_path %></item>
+        <% if signed_in? %>
         <item><%=link_to "Users", users_path %></item>
         <item><%=link_to "Projects", projects_path %></item>
+        <% end %>
         <item><%=link_to "Stopwatch", stopwatch_path,  data: { turbolinks: 'false' } %></item>
         </ul>
     </div>
